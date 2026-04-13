@@ -8,7 +8,7 @@ html, body {
 
 body {
    margin: 0;
-   padding-top: 20px;
+   padding-top: 200px;
    background: linear-gradient(to right, #98cbfd, #00367d);
    display: flex;
    flex-direction: column;
