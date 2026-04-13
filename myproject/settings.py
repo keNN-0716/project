@@ -25,8 +25,24 @@ SECRET_KEY = 'django-insecure-63l2fdfkqw^9^%l+9nl_cm!g9^4+)89p)_vyii168nz=5a7!z4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["my-portfolio.onrender.com"]
+ALLOWED_HOSTS = [
+    ".onrender.com",
+    "my-portfolio.onrender.com",
+    "localhost",
+    "127.0.0.1"
+    ]
 
+# Fix Render proxy SSL detection
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_TRUSTED_ORIGINS = [
+  "https://*.onrender.com",
+  "https://my-portfolio.onrender.com"
+]
+
+# Required production security settings
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -42,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,7 +72,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'my_portfolio/templates'],
+        'DIRS': [BASE_DIR / 'personalportfolio/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
