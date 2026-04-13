@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section id="home" class="flex item-start py-8 px-25 mt-12 ml-0 w-full h-auto">   
+        <img id="profile-pic" src="{% static 'img/me.png' %}" alt="Your Photo" class="rounded-2xl object-cover mr-8 shadow-2xl ring-4 ring-blue-400 px-4">
+        <div>
+            <h1 class="text-4xl font-bold">Welcome to My Portfolio!</h1>
+            <div id="intro" class="mt-4 p-4 rounded-2xl shadow-md">
+                <p class="text-lg font-medium">I'm thinking this is my 4th try doing this portfolio
+                    and I'm finally getting the hang of Django and Tailwind. With lots of ups and downs I can't really say
+                    that I'm a professional. A lot of this was researched online and with AI assistance. I know, I know this guy is using AI
+                    for his portfolio, but hey, it's the same of asking a professional for help and I don't really know any professionals really.
+                    <br><br>
+                    <p>Well before that. Hi, my name John Kenneth Romano, I am an I.T. student that is learning in Camarines Sur Polytechnic Colleges.
+                        I am 19 years old as I am making this project, and I hope you like my work. Just so you know I only use AI prompts to help me 
+                        not to create this portfolio using AI. I really want to test my skills and problem solving skills when making this so if I do
+                        that I would be cheating on myself and I don't want that. I want to be able to say that I made this portfolio by myself and 
+                        I am proud of it.
+                    <br><br>
+                    Anyways I hope this portfolio doesn't get corrupted again.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="mt-14 py-8 px-24">
+        <h2 class="text-3xl font-bold">About Me</h2>
+        <p class="text-lg font-medium">This is the about section. You can the containers 
+            for more information of what type of person I am and what do I do for fun and
+            my hobbies. 
+        </p>
+
+        {% include 'modal.html' %}
+
+        <div class="whatiam ml-52 mt-4 p-3 flex flex-row gap-6">
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="1" data-title="I.T. Student" data-message="I am a IT student in Camarines Sur Polytechnic Colleges. I am currently learning different web frameworks to test my programming skills and designing skills." onclick="openModal('I.T. Student', 'I am a IT student in Camarines Sur Polytechnic Colleges. I am currently learning different web frameworks to test my programming skills and designing skills.')">
+                <p style="font-size: 2rem;">👨‍💻</p>
+                <h2 class="text-lg font-bold">I.T. Student</h2>
+            </div>
+
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="2" data-title="Gaming Enthusiast" data-message="I do gaming as a hobby, a very passionate hobby. The games that I play are mostly RPGs, Shooters, and Strategy games." onclick="openModal('Gaming Enthusiast', 'I do gaming as a hobby, a very passionate hobby. The games that I play are mostly RPGs, Shooters, and Strategy games.')">
+                <p style="font-size: 2rem;">🎮</p>
+                <h2 class="text-lg font-bold">Gaming Enthusiast</h2>
+            </div>
+
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="3" data-title="Music Lover" data-message="Mostly I listen to alternative rock music and some indie/under rated artists. I mostly listen to Good Kid and Evan Fong" onclick="openModal('Music Lover', 'Mostly I listen to alternative rock music and some indie/under rated artists. I mostly listen to Good Kid and Evan Fong')">
+                <p style="font-size: 2rem;">🎸</p>
+                <h2 class="text-lg font-bold">Music Lover</h2>
+            </div>
+
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="4" data-title="Nerdy Guy" data-message="I am a nerdy guy who loves technology and enjoys learning about new advancements in the tech world." onclick="openModal('Nerdy Guy', 'I am a nerdy guy who loves technology and enjoys learning about new advancements in the tech world.')">
+                <p style="font-size: 2rem;">🤓</p>
+                <h2 class="text-lg font-bold">Nerdy Guy</h2>
+            </div>
+
+        </div>
+
+        <div class="whatiam ml-52 mt-4 p-3 flex flex-row gap-6">
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="5" data-title="Too Kind" data-message="I am too kind for my own good, I always try to help others and put their needs before mine. Sometimes I forget to take care of myself because of this." onclick="openModal('Too Kind', 'I am too kind for my own good, I always try to help others and put their needs before mine. Sometimes I forget to take care of myself because of this.')">
+                <p style="font-size: 2rem;">👨</p>
+                <h2 class="text-lg font-bold">Too Kind</h2>
+            </div>
+
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="6" data-title="Daring Risk-Taker" data-message="I always take the risk if I need to, to open up new opportunities for myself. Life is a gamble, always live at the edge of the moment." onclick="openModal('Daring Risk-Taker', 'I always take the risk if I need to, to open up new opportunities for myself. Life is a gamble, always live at the edge of the moment.')">
+                <p style="font-size: 2rem;">😎</p>
+                <h2 class="text-lg font-bold">Daring Risk-Taker</h2>
+            </div>
+
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="7" data-title="Anime Fan" data-message="I am a huge anime fan, I love watching different genres of my taste including action, adventure, romcoms, and slice of life." onclick="openModal('Anime Fan', 'I am a huge anime fan, I love watching different genres of my taste including action, adventure, romcoms, and slice of life.')">
+                <p style="font-size: 2rem;">🎌</p>
+                <h2 class="text-lg font-bold">Anime Fan</h2>
+            </div>
+
+            <div class="IT bg-blue-400 rounded-2xl text-center mx-2" data-index="8" data-title="Karaoke Lover" data-message="As a Filipino, I love singing but don\'t expect me to hit all the right notes! Karaoke is all about having fun and enjoying the moment." onclick="openModal('Karaoke Lover', 'As a Filipino, I love singing but don\'t expect me to hit all the right notes! Karaoke is all about having fun and enjoying the moment.')">
+                <p style="font-size: 2rem;">🎤</p>
+                <h2 class="text-lg font-bold">Karaoke Lover</h2>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-8 px-24">
+        <h2 class="text-3xl font-bold">Projects</h2>
+        <p>Your projects content here.</p>
+    </section>
+
+    <section id="skills" class="py-8 px-24">
+        <h2 class="text-3xl font-bold">Skills</h2>
+        <p>Your skills content here.</p>
+    </section>
+
+{% endblock %}
