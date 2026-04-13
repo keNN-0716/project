@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-63l2fdfkqw^9^%l+9nl_cm!g9^4+)89p)_vyii168nz=5a7!z4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["myportfolio.com", "128.0.0.0:0000"]
+ALLOWED_HOSTS = ["my-portfolio.onrender.com"]
 
 
 # Application definition
@@ -116,6 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
     BASE_DIR / "personalportfolio/static/css",
